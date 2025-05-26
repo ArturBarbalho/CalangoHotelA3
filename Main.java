@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 
+import Classes.Check.Check;
+
 public class Main extends Application {
     @Override
     public void start(Stage stage) {
@@ -28,4 +30,25 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
+public class JavaConnector {
+        Check Check = new Check();
+
+        public String listarReservas() {
+            return Check.listarReservasAguardandoCheckIn();
+        }
+
+        public boolean realizarCheckIn(int id) {
+            return Check.realizarCheckIn(id);
+        }
+
+        public boolean realizarCheckOut(int id) {
+            return Check.realizarCheckOut(id);
+        }
+    }
+
+
+
+
+
 }

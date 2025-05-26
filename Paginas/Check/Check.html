@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Check-in / Check-out</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="Check.css">
+</head>
+<body>
+<div id="app" class="container">
+    <h1>Gestão de Check-in / Check-out</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Quarto</th>
+            <th>Status</th>
+            <th>Ação</th>
+        </tr>
+        <tr v-for="reserva in reservas">
+            <td>{{ reserva.id }}</td>
+            <td>{{ reserva.cliente }}</td>
+            <td>{{ reserva.quarto }}</td>
+            <td>{{ reserva.status }}</td>
+            <td>
+                <button v-if="reserva.status === 'Aguardando Check-in'" @click="fazerCheckIn(reserva.id)">Check-in</button>
+                <button v-if="reserva.status === 'Ocupado'" @click="fazerCheckOut(reserva.id)">Check-out</button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button @click="carregar()">🔄 Atualizar Lista</button>
+</div>
+
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            reservas: []
+        },
+        methods: {
+            carregar() {
+                const json = window.javaConnector.listarReservas();
+                this.reservas = JSON.parse(json);
+            },
+            fazerCheckIn(id) {
+                const ok = window.javaConnector.realizarCheckIn(id);
+                if (ok) {
+                    alert("✅ Check-in realizado!");
+                    this.carregar();
+                } else {
+                    alert("❌ Falha no Check-in.");
+                }
+            },
+            fazerCheckOut(id) {
+                const ok = window.javaConnector.realizarCheckOut(id);
+                if (ok) {
+                    alert("✅ Check-out realizado!");
+                    this.carregar();
+                } else {
+                    alert("❌ Falha no Check-out.");
+                }
+            }
+        },
+        mounted() {
+            this.carregar();
+        }
+    });
+</script>
+</body>
+</html>
