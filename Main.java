@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import java.io.File;
 
 import Classes.Check.Check;
+import Classes.Cadastro.Cadastro;
 
 public class Main extends Application {
     @Override
@@ -31,7 +32,7 @@ public class Main extends Application {
         launch(args);
     }
 
-public class JavaConnector {
+public class JavaConnectorCheck {
         Check Check = new Check();
 
         public String listarReservas() {
@@ -48,7 +49,20 @@ public class JavaConnector {
     }
 
 
+public class JavaConnectorCadastro {
+        Cadastro Cadastro = new Cadastro();
+        public String listarHospedes() {
+            return Cadastro.listarHospedes();
+        }
 
+        public boolean cadastrarHospede(String nome, String email, String telefone) {
+            return Cadastro.cadastrarHospede(nome, email, telefone);
+        }
+
+        public boolean removerHospede(int id) {
+            return Cadastro.removerHospede(id);
+        }
+    }
 
 
 }

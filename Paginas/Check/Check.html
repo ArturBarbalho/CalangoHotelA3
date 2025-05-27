@@ -40,11 +40,11 @@
         },
         methods: {
             carregar() {
-                const json = window.javaConnector.listarReservas();
+                const json = window.javaConnectorCheck.listarReservas();
                 this.reservas = JSON.parse(json);
             },
             fazerCheckIn(id) {
-                const ok = window.javaConnector.realizarCheckIn(id);
+                const ok = window.javaConnectorCheck.realizarCheckIn(id);
                 if (ok) {
                     alert("✅ Check-in realizado!");
                     this.carregar();
@@ -53,7 +53,7 @@
                 }
             },
             fazerCheckOut(id) {
-                const ok = window.javaConnector.realizarCheckOut(id);
+                const ok = window.javaConnectorCheck.realizarCheckOut(id);
                 if (ok) {
                     alert("✅ Check-out realizado!");
                     this.carregar();
