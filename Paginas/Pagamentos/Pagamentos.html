@@ -4,36 +4,8 @@
     <meta charset="UTF-8">
     <title>Painel de Pagamentos</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <style>
-        body {
-            font-family: Arial;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            background: white;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 12px;
-            border: 1px solid #ddd;
-        }
-        th {
-            background: #0077cc;
-            color: white;
-        }
-        button {
-            padding: 8px 16px;
-            background: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #218838;
-        }
-    </style>
+    <link rel="stylesheet" href="Pagamentos.css">
+    <script src="Pagamentos.js"></script>
 </head>
 <body>
     <div id="app">
@@ -63,28 +35,6 @@
         
     </div>
 
-    <script>
-        const app = new Vue({
-            el: '#app',
-            data: {
-                pagamentos: []
-            },
-            methods: {
-                carregarPagamentos(dadosJson) {
-                    try {
-                        this.pagamentos = JSON.parse(dadosJson);
-                    } catch (e) {
-                        alert("Erro ao processar dados: " + e.message);
-                    }
-                },
-                
-            }
-        });
-
-        // Expor método global para que o Java possa chamar
-        window.carregarPagamentos = function(dadosJson) {
-            app.javaPagamentos(dadosJson);
-        }
-    </script>
+    
 </body>
 </html>
