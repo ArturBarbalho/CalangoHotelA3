@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro Vue</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="../CadastroCliente/Cadastro.js" defer></script>
+  <link href="../CadastroCliente/Cadastro.css" rel="stylesheet"/>
+</head>
+<div id="bode">
+  <div id="ap">
+    <h1>CADASTRAR CLIENTE</h1>
+    <div id="container">
+      <img id="logo" src="../../Imagens/Imagem_do_WhatsApp_de_2025-05-17_à_s__12.31.05_b032e12f-removebg-preview.png" alt="">
+      
+      <p>Nome completo</p>
+      <input type="text" v-model="nome" />
+
+      <p>CPF</p>
+      <input type="text" v-model="cpf" />
+
+      <p>Número de telefone</p>
+      <input type="text" v-model="telefone" />
+
+      <p>Email</p>
+      <input type="text" v-model="email" />
+
+      <p> Quarto</p>
+      <select v-model="quarto">
+        <option value="1">Quarto 1</option>
+        <option value="2">Quarto 2</option>
+        <option value="3">Quarto 3</option>
+        <option value="4">Quarto 4</option>
+       </select> 
+      <p>Data de entrada</p>
+      <input type="date" v-model="dataEntrada" />
+
+      <p>Data de saida</p>
+      <input type="date" v-model="dataSaida" />
+
+      <p>Valor da reserva</p>
+      <input type="number" v-model="valorReserva" />
+      <p>Metodo de pagamento</p>
+      <select v-model="metodoPagamento">
+        <option value="cartao">Cartão de Crédito</option>
+        <option value="pix">Pix</option>
+        <option value="boleto">Boleto</option>
+      </select>
+      <button @click="cadastrar">Cadastrar</button> 
+
+
+       
+      
+    </div>
+  </div>
+
+</div>
+</html>

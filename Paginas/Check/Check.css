@@ -1,0 +1,21 @@
+.tabela, th, td{
+    border-collapse: collapse; /*define a separação entre as bordar*/
+    padding: 10px;
+    text-align: left;
+    border: 1px solid rgb(160 160 160);
+}
+th{
+    background-color: lightgray;
+}
+table{
+    width: 60%;
+    margin: 50px;
+}
+.container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}

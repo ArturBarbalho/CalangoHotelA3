@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA com Vue + Templates externos</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div><strong>Meu Site</strong></div>
+            <nav>
+                <a href="#" :class="{ active: currentPage === 'Check' }" @click.prevent="loadPage('../Check/Check')">Reservas</a>
+                <a href="#" :class="{ active: currentPage === 'Cadastro' }" @click.prevent="loadPage('../CadastroCliente/Cadastro')">Cadastrar</a>
+            </nav>
+        </header>
+
+        <main v-html="content">
+            <!-- Conteúdo dinâmico carregado aqui -->
+        </main>
+    </div>
+
+    <script src="Home.js"></script>
+        
+    
+</body>
+</html>

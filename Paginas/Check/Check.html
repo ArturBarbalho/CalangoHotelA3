@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Check-in / Check-out</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="../Check/Check.js" defer></script>
+    <link rel="stylesheet" href="../Check/Check.css">
+</head>
+<body>
+<div id="app" class="container">
+    <h1>Gestão de Check-in / Check-out</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Quarto</th>
+            <th>Status</th>
+            <th>Ação</th>
+        </tr>
+        <tr v-for="reserva in reservas">
+            <td>{{ reserva.id }}</td>
+            <td>{{ reserva.cliente }}</td>
+            <td>{{ reserva.quarto }}</td>
+            <td>{{ reserva.status }}</td>
+            <td>
+                <button v-if="reserva.status === 'Aguardando Check-in'" @click="fazerCheckIn(reserva.id)">Check-in</button>
+                <button v-if="reserva.status === 'Ocupado'" @click="fazerCheckOut(reserva.id)">Check-out</button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button @click="carregar()">🔄 Atualizar Lista</button>
+</div>
+
+<script>
+    
+</script>
+</body>
+</html>

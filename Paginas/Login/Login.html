@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="Login.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="Login.js" defer></script>
+</head>
+<body >
+    <div id="app">
+    <h1>LOGIN</h1>
+    <div id="container">
+        <img id="logo" src="../../Imagens/Imagem_do_WhatsApp_de_2025-05-17_à_s__12.31.05_b032e12f-removebg-preview.png" alt="">
+        <p>Usuário</p>
+        <input type="text" v-model="usuario">
+        <p>Senha</p>
+        <input type="password" v-model="senha">
+        <br>
+        <button  @click="fazerLogin">Login</button>
+    </div>
+    </div>
+</body>
+</html>
