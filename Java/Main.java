@@ -1,9 +1,6 @@
 import static spark.Spark.*;
-
-
 import com.google.gson.Gson;
 import Classes.Check.JavaConnectorCheck;
-
 import Classes.Login.JavaConnectorLogin;
 import Classes.Cadastro.JavaConnectorCadastro;
 import Classes.Pagamentos.Pagamentos;

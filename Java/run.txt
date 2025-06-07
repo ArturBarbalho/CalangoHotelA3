@@ -1,3 +1,5 @@
-javac -cp "lib/*" Main.java
+javac -cp ".;lib/*" Main.java
 
-java -cp "lib/*;." Main
+java -cp ".;lib/*" Main
+
+
