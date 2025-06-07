@@ -10,10 +10,26 @@
 <body>
     <div id="app">
         <header>
-            <div><strong>Meu Site</strong></div>
+            <div>
+                <img id="home" src="../../Imagens/Logo.png" alt="Logo do Hotel Calango">
+            </div>
+
             <nav>
-                <a href="#" :class="{ active: currentPage === 'Check' }" @click.prevent="loadPage('../Check/Check')">Reservas</a>
-                <a href="#" :class="{ active: currentPage === 'Cadastro' }" @click.prevent="loadPage('../CadastroCliente/Cadastro')">Cadastrar</a>
+
+                <a href="#" :class="{ active: currentPage === 'Check' }" @click.prevent="loadPage('../Check/Check')">
+                  <img id="icons" src="../../Imagens/reservas.png" alt="">  
+                  <span>Reservas</span>                  
+                </a>
+
+                <a href="#" :class="{ active: currentPage === 'Cadastro' }" @click.prevent="loadPage('../CadastroCliente/Cadastro')">
+                    <img id="icons" src="../../Imagens/cadastrar.png" alt="">
+                    <span>Cadastrar</span>
+                </a>
+
+                <a href="#" :class="{ active: currentPage === 'Pagamentos' }" @click.prevent="loadPage('../Pagamentos/Pagamentos')">
+                    <img id="icons" src="../../Imagens/pagamentos.png" alt="">
+                    <span>Pagamentos</span>
+                </a>
             </nav>
         </header>
 
