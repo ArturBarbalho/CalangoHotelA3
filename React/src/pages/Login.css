@@ -1,5 +1,5 @@
-#ap{
-    background-color: #02894a;
+#body-login{
+    background-image:url("../../public/login.jpg");
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,33 +7,42 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100%;
+    min-height: 100vh;
+
 }
-
-
-#container{
+#logo-login{
+    width: 80%;
+}
+#title-login{
+    color: aliceblue;
+    text-shadow: 2px 2px 3px green;
+    font-size: 50px;
+    border-color: aliceblue;
+    font-family: Marker Felt;
+    
+}
+#container-login{
     background-color: rgb(240, 248, 255, 0.9);
     border-radius: 50px;
     margin: 10px;
     padding: 30px;
     padding-bottom: 70px;
+    box-shadow: 10px 5px 50px black;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 60%;
-    margin-top: 50px;
+    width: 20%;
+    min-width: 300px;
 }
-input{
-    width: 80%;
+#input-login{
+    width: 85%;
     border-radius: 40px;
     height: 22px;
     opacity: 5px;
     box-shadow: 2px 2px 2px black;
     opacity: 0.5;
-    height: 25px;
 }
-button{
+#button-login{
     margin-top: 30px;
     background-color: #04AA6D; /* Green */
     border: none;
@@ -47,36 +56,13 @@ button{
     width: 150px;
     cursor: pointer;
 }
-button:hover{
+#button-login:hover{
     background-color: #067c51;
     color: aliceblue;
 }
-p{
+#p-login{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 20px;
     width: 300px;
     font-weight: bolder;
-}
-#ap{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-#formulario{
-    width: 100%;
-}
-#linha{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-#select{
-    width: 80%;
-    border-radius: 40px;
-    height: 25px;
-    box-shadow: 2px 2px 2px black;
-    opacity: 0.5;
 }
