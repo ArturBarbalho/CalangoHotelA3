@@ -1,5 +1,5 @@
-#bode{
-    background-image:url("../../Imagens/Imagem\ do\ WhatsApp\ de\ 2025-05-17\ à\(s\)\ 21.57.00_f8a229c2.jpg");
+#ap{
+    background-color: #02894a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,33 +7,25 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    
+    width: 100%;
 }
-#logo{
-    width: 80%;
-}
-h1{
-    color: aliceblue;
-    text-shadow: 2px 2px 3px green;
-    font-size: 50px;
-    border-color: aliceblue;
-    font-family: Marker Felt;
-    
-}
+
+
 #container{
     background-color: rgb(240, 248, 255, 0.9);
     border-radius: 50px;
     margin: 10px;
     padding: 30px;
     padding-bottom: 70px;
-    box-shadow: 10px 5px 50px black;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 60%;
+    margin-top: 50px;
 }
 input{
-    width: 85%;
+    width: 80%;
     border-radius: 40px;
     height: 22px;
     opacity: 5px;
@@ -70,4 +62,21 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+#formulario{
+    width: 100%;
+}
+#linha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+#select{
+    width: 80%;
+    border-radius: 40px;
+    height: 25px;
+    box-shadow: 2px 2px 2px black;
+    opacity: 0.5;
 }
