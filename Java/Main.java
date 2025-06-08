@@ -118,7 +118,12 @@ public class Main {
             }
         });
         
-
+        get("/", (req, res) -> {
+            res.type("text/html");
+            return "<h1>Bem-vindo à API do Hotel!</h1>" +
+                   "<p>Use os endpoints para interagir com o sistema.</p>" +
+                   "<p>Exemplo: <a href='/api/check/reservas'>/api/check/reservas</a></p>";
+        });
     }
 
     // Classes auxiliares para desserializar JSON requests:

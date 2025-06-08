@@ -2,4 +2,9 @@ javac -cp ".;lib/*" Main.java
 
 java -cp ".;lib/*" Main
 
+http://localhost:8081/
 
+
+java `
+  -cp "C:\Users\arthu\Desktop\CalangoHotelA3-master\Java\lib\mssql-jdbc-12.10.0.jre11.jar;C:\Users\arthu\AppData\Roaming\Code\User\workspaceStorage\2f2a5a5ec6e50fdb471a9b40a69d2fcb\redhat.java\jdt_ws\CalangoHotelA3-master_4e07495b\bin" `
+  Classes.Database.ConexaoSQL
