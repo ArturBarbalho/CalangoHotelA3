@@ -16,7 +16,7 @@ CREATE TABLE Reservas (
     id SERIAL PRIMARY KEY,
     Status VARCHAR NOT NULL,
     Quarto INT NOT NULL,
-    ID_Cliente INT NOT NULL,
+    Cliente VARCHAR NOT NULL,
     Data_CheckIn VARCHAR NOT NULL,
     Data_CheckOut VARCHAR NOT NULL
 );
