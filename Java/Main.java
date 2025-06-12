@@ -111,7 +111,7 @@ public class Main {
             res.type("application/json");
             try {
                 String pagamentos = gson.toJson(javaPagamentos.listarPagamentos());
-                return new MessageResponse(pagamentos);
+                return gson.toJson(new MessageResponse(pagamentos));
             } catch (Exception e) {
                 e.printStackTrace();
                 res.status(500);

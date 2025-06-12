@@ -7,18 +7,18 @@ const ListaPagamentos = () => {
   useEffect(() => {
     const fetchPagamentos = async () => {
       try {
-        const response = await fetch("http://localhost:8081/api/pagamentos");
-        if (!response.ok) {
-          throw new Error('Erro na requisição');
-        }
-        const data = await response.json(); // Parse JSON instead of text
-        setPagamentos(data); // Expecting an array of payment objects
+        const response = await fetch("http://localhost:8081/api/pagamentos");  
+        const data = await response.json();
+        console.log(data.message);
+
+        setPagamentos(JSON.parse(data.message));
+
       } catch (err) {
         console.error(err.message);
       }
     };
     fetchPagamentos();
-  }, []); // Empty dependency array to run once on mount
+  }, []); 
 
   return (
     <div className="container">
