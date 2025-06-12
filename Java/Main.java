@@ -4,6 +4,7 @@ import Classes.Check.JavaConnectorCheck;
 import Classes.Login.JavaConnectorLogin;
 import Classes.Cadastro.JavaConnectorCadastro;
 import Classes.Pagamentos.Pagamentos;
+import Classes.Database.ConexaoSQL;
 
 public class Main {
     static class MessageResponse {
@@ -151,3 +152,43 @@ public class Main {
         int valor;
         String formaPagamento;
     }}
+
+
+
+
+ /*public class Main {
+    static class MessageResponse {
+        String message;
+        MessageResponse(String message) { this.message = message; }
+    }
+    public static void main(String[] args) {
+        // Inicia o servidor na porta 8081
+        port(8081);
+        
+       
+
+        Gson gson = new Gson();
+
+        // CORS básico
+        options("/*", (req, res) -> {
+            String acrh = req.headers("Access-Control-Request-Headers");
+            if (acrh != null) res.header("Access-Control-Allow-Headers", acrh);
+            String acrm = req.headers("Access-Control-Request-Method");
+            if (acrm != null) res.header("Access-Control-Allow-Methods", acrm);
+            return "OK";
+        });
+        before((req, res) -> res.header("Access-Control-Allow-Origin", "*"));
+
+        
+        // --- Endpoints Check (reservas, checkin, checkout, nova reserva) ---
+        get("/api", (req, res) -> {
+            res.type("application/json");
+            ConexaoSQL db = new ConexaoSQL();
+            db.conectar();
+            
+            return gson.toJson(new MessageResponse("test"));
+        });
+
+    }
+}
+     */

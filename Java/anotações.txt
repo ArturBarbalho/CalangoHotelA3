@@ -1,0 +1,15 @@
+//tabelas para criar no banco
+Hospedes = {
+    Nome
+    Email
+    Telefone
+    Quarto
+    DataEntrada
+    DataSaida
+    Valor
+    FormaPagamento
+}
+
+Reservas = {
+    
+}

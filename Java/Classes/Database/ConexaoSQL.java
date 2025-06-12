@@ -7,9 +7,9 @@ import java.sql.SQLException;
 public class ConexaoSQL {
 
     // Dados da conexão — com autenticação SQL Server (usuário e senha)
-    private static final String URL = "jdbc:sqlserver://localhost\\SQLEXPRESS:1433;databaseName=master;encrypt=true;trustServerCertificate=true";
-    private static final String USUARIO = "calango";
-    private static final String SENHA = "calango123k";
+    private static final String URL = "jdbc:postgresql://localhost:5432/hotel";
+    private static final String USUARIO = "postgres";
+    private static final String SENHA = "1234";
 
     public static Connection conectar() {
         Connection conexao = null;
@@ -26,20 +26,5 @@ public class ConexaoSQL {
         return conexao;
     }
 
-    public static void main(String[] args) {
-        try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            Connection conexao = DriverManager.getConnection(URL, USUARIO, SENHA);
-
-            if (conexao != null) {
-                System.out.println("✅ Conexão com o banco de dados realizada com sucesso!");
-                conexao.close();
-            }
-
-        } catch (ClassNotFoundException e) {
-            System.err.println("❌ Driver JDBC não encontrado: " + e.getMessage());
-        } catch (SQLException e) {
-            System.err.println("❌ Erro ao conectar ao banco: " + e.getMessage());
-        }
-    }
+   
 }
