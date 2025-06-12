@@ -16,7 +16,8 @@ public class JavaConnectorCadastro {
           
              Cadastro.cadastrarHospede(nome, email, telefone, quarto, dataEntrada, dataSaida, valor, formaPagamento);
              reserva.NovaReserva(nome, quarto, dataEntrada, dataSaida);
-             Pagamento.salvarPagamento(valor, Integer.parseInt(dataEntrada), formaPagamento); 
+             int data = Integer.parseInt(dataEntrada.replace("-", ""));
+             Pagamento.salvarPagamento(valor,data, formaPagamento); 
         }
 
         public void removerHospede(int id) {

@@ -4,7 +4,7 @@ import './Cadastro.css'; // Assumindo que o CSS está disponível
 const CadastroCliente = () => {
   const [nome, setNome] = useState('');
   const [cpf, setCpf] = useState('');
-  const [telefone, setTelefone] = useState('');
+  const [telefone, setTelefone] = useState(0);
   const [email, setEmail] = useState('');
   const [quarto, setQuarto] = useState('');
   const [dataEntrada, setDataEntrada] = useState('');
@@ -58,7 +58,7 @@ const CadastroCliente = () => {
           <input type="text" value={cpf} onChange={(e) => setCpf(e.target.value)} />
 
           <p>Número de telefone</p>
-          <input type="text" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
+          <input type="number" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
 
           <p>Email</p>
           <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -75,10 +75,10 @@ const CadastroCliente = () => {
           </select>
 
           <p>Data de entrada</p>
-          <input type="date" value={dataEntrada} onChange={(e) => setDataEntrada(e.target.value)} />
+          <input type="text" value={dataEntrada} onChange={(e) => setDataEntrada(e.target.value)} />
 
           <p>Data de saída</p>
-          <input type="date" value={dataSaida} onChange={(e) => setDataSaida(e.target.value)} />
+          <input type="text" value={dataSaida} onChange={(e) => setDataSaida(e.target.value)} />
 
           <p>Valor da reserva</p>
           <input type="number" value={valorReserva} onChange={(e) => setValorReserva(e.target.value)} />
