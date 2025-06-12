@@ -5,7 +5,7 @@ public class JavaConnectorCheck {
 
     public String listarReservas() {
         return Check.listarReservasAguardandoCheckIn();
-    }
+    } 
 
     public boolean realizarCheckIn(int id) {
         return Check.realizarCheckIn(id);

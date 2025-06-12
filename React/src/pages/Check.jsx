@@ -7,11 +7,13 @@ const CheckComponent = () => {
   const carregar = async () => {
     try {
       const response = await fetch("http://localhost:8081/api/check/reservas");
-      const data = await response.json();
-      setReservas(JSON.parse(data.message));
-      alert("✅ Reservas carregadas com sucesso!");
+      var data = await response.json();
+      data = JSON.parse(data.message);
+      setReservas(data);
+      console.log(data)
+      console.log("✅ Reservas carregadas com sucesso!");
     } catch (err) {
-      alert("❌ Erro ao carregar reservas: " + err.message);
+      console.log("❌ Erro ao carregar reservas: " + err.message);
     }
   };
 

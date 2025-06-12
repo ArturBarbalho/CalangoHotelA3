@@ -1,5 +1,6 @@
 package Classes.Check;
-
+import org.json.JSONArray;
+import org.json.JSONObject;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -49,49 +50,45 @@ public class Check {
         }
     }
 
-    // Método para consultar reservas aguardando check-in
-    public String listarReservasAguardandoCheckIn() {
-        Connection conexao = ConexaoSQL.conectar();
-        String sql = "SELECT * FROM Reservas WHERE Status = 'Aguardando Check-in'";
-        StringBuilder response = new StringBuilder();
-
-        try {
-            PreparedStatement stmt = conexao.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
-
-            response.append("📜 Reservas aguardando Check-in:\n");
-            while (rs.next()) {
-                int id = rs.getInt("ID");
-                int Quarto = rs.getInt("Quarto");
-                int idCliente = rs.getInt("ID_Cliente");
-                String checkIn = rs.getString("Data_CheckIn");
-                String checkOut = rs.getString("Data_CheckOut");
-
-                response.append("Reserva ID: ").append(id)
-                        .append(", Quarto: ").append(Quarto)
-                        .append(", Cliente: ").append(idCliente)
-                        .append(", Check-In: ").append(checkIn)
-                        .append(", Check-Out: ").append(checkOut)
-                        .append("\n");
-            }
-
-            rs.close();
-            stmt.close();
-            conexao.close();
-
-            return response.toString().trim();
-        } catch (SQLException e) {
-            String errorMessage = "❌ Erro ao listar reservas: " + e.getMessage();
-            return errorMessage;
-        }
-    }
     
-    public void NovaReserva(String ID_Cliente, int Quarto, String dataEntrada, String dataSaida) {
+public String listarReservasAguardandoCheckIn() {
+    Connection conexao = ConexaoSQL.conectar();
+    String sql = "SELECT * FROM Reservas";
+    JSONArray reservasJson = new JSONArray();
+
+    try {
+        PreparedStatement stmt = conexao.prepareStatement(sql);
+        ResultSet rs = stmt.executeQuery();
+
+        while (rs.next()) {
+            JSONObject reserva = new JSONObject();
+            reserva.put("id", rs.getInt("ID"));
+            reserva.put("quarto", rs.getInt("Quarto"));
+            reserva.put("cliente", rs.getString("Cliente"));
+            reserva.put("checkIn", rs.getString("Data_CheckIn"));
+            reserva.put("checkOut", rs.getString("Data_CheckOut"));
+            reserva.put("status", rs.getString("Status"));
+
+            reservasJson.put(reserva);
+        }
+
+        rs.close();
+        stmt.close();
+        conexao.close();
+
+        return reservasJson.toString(); // retorna JSON em formato de array
+    } catch (Exception e) {
+        e.printStackTrace();
+        return "[]"; // retorna array vazio em caso de erro
+    }
+}
+    
+    public void NovaReserva(String Cliente, int Quarto, String dataEntrada, String dataSaida) {
         Connection conexao = ConexaoSQL.conectar();
-        String sql = "INSERT INTO Reservas (ID_Cliente, Quarto, Data_CheckIn, Data_CheckOut, Status) VALUES (?, ?, ?, ?, 'Aguardando Check-in')";
+        String sql = "INSERT INTO Reservas (Cliente, Quarto, Data_CheckIn, Data_CheckOut, Status) VALUES (?, ?, ?, ?, 'Aguardando Check-in')";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, ID_Cliente);
+            stmt.setString(1, Cliente);
             stmt.setInt(2, Quarto);
             stmt.setString(3, dataEntrada);
             stmt.setString(4, dataSaida);

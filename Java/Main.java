@@ -31,7 +31,7 @@ public class Main {
         });
         before((req, res) -> res.header("Access-Control-Allow-Origin", "*"));
 
-        
+          
 
         // --- Endpoints Check (reservas, checkin, checkout, nova reserva) ---
         get("/api/check/reservas", (req, res) -> {

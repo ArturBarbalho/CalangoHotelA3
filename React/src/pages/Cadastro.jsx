@@ -75,10 +75,10 @@ const CadastroCliente = () => {
           </select>
 
           <p>Data de entrada</p>
-          <input type="text" value={dataEntrada} onChange={(e) => setDataEntrada(e.target.value)} />
+          <input type="date" value={dataEntrada} onChange={(e) => setDataEntrada(e.target.value)} />
 
           <p>Data de saída</p>
-          <input type="text" value={dataSaida} onChange={(e) => setDataSaida(e.target.value)} />
+          <input type="date" value={dataSaida} onChange={(e) => setDataSaida(e.target.value)} />
 
           <p>Valor da reserva</p>
           <input type="number" value={valorReserva} onChange={(e) => setValorReserva(e.target.value)} />
