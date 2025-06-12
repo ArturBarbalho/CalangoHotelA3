@@ -1,0 +1,40 @@
+-- Criando a tabela Hospedes
+CREATE TABLE Hospedes (
+    id SERIAL PRIMARY KEY,
+    Nome VARCHAR NOT NULL,
+    Email VARCHAR NOT NULL,
+    Telefone VARCHAR NOT NULL,
+    Quarto INT NOT NULL,
+    DataEntrada VARCHAR NOT NULL,
+    DataSaida VARCHAR NOT NULL,
+    Valor INT NOT NULL,
+    FormaPagamento VARCHAR NOT NULL
+);
+
+-- Criando a tabela Reservas
+CREATE TABLE Reservas (
+    id SERIAL PRIMARY KEY,
+    Status VARCHAR NOT NULL,
+    Quarto INT NOT NULL,
+    ID_Cliente INT NOT NULL,
+    Data_CheckIn VARCHAR NOT NULL,
+    Data_CheckOut VARCHAR NOT NULL
+);
+
+-- Criando a tabela Funcionarios
+CREATE TABLE Funcionarios (
+    id SERIAL PRIMARY KEY,
+    usuario VARCHAR NOT NULL,
+    senha VARCHAR NOT NULL
+);
+
+-- Inserindo um usuário padrão na tabela Funcionarios
+INSERT INTO Funcionarios (usuario, senha) VALUES ('admin', 'admin123');
+
+-- Criando a tabela Pagamentos
+CREATE TABLE Pagamentos (
+    id SERIAL PRIMARY KEY,
+    valor INT NOT NULL,
+    data INT NOT NULL,
+    metodo VARCHAR NOT NULL
+);

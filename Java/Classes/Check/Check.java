@@ -62,13 +62,13 @@ public class Check {
             response.append("📜 Reservas aguardando Check-in:\n");
             while (rs.next()) {
                 int id = rs.getInt("ID");
-                int idQuarto = rs.getInt("ID_Quarto");
+                int Quarto = rs.getInt("Quarto");
                 int idCliente = rs.getInt("ID_Cliente");
                 String checkIn = rs.getString("Data_CheckIn");
                 String checkOut = rs.getString("Data_CheckOut");
 
                 response.append("Reserva ID: ").append(id)
-                        .append(", Quarto: ").append(idQuarto)
+                        .append(", Quarto: ").append(Quarto)
                         .append(", Cliente: ").append(idCliente)
                         .append(", Check-In: ").append(checkIn)
                         .append(", Check-Out: ").append(checkOut)
@@ -86,13 +86,13 @@ public class Check {
         }
     }
     
-    public void NovaReserva(String nome, int quarto, String dataEntrada, String dataSaida) {
+    public void NovaReserva(String ID_Cliente, int Quarto, String dataEntrada, String dataSaida) {
         Connection conexao = ConexaoSQL.conectar();
-        String sql = "INSERT INTO Reservas (nome, quarto, Data_CheckIn, Data_CheckOut, Status) VALUES (?, ?, ?, ?, 'Aguardando Check-in')";
+        String sql = "INSERT INTO Reservas (ID_Cliente, Quarto, Data_CheckIn, Data_CheckOut, Status) VALUES (?, ?, ?, ?, 'Aguardando Check-in')";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
-            stmt.setString(1, nome);
-            stmt.setInt(2, quarto);
+            stmt.setString(1, ID_Cliente);
+            stmt.setInt(2, Quarto);
             stmt.setString(3, dataEntrada);
             stmt.setString(4, dataSaida);
 

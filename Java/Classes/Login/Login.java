@@ -17,11 +17,11 @@ public class Login {
         boolean autenticado = false;
 
         try {
-            // Conectar ao banco
+            
             conexao = ConexaoSQL.conectar();
 
-            // Query SQL — substitua "tabela_usuarios" pelo nome real da sua tabela
-            String sql = "SELECT * FROM tabela_usuarios WHERE usuario = ? AND senha = ?";
+            
+            String sql = "SELECT * FROM Funcionarios WHERE usuario = ? AND senha = ?";
 
             stmt = conexao.prepareStatement(sql);
             stmt.setString(1, usuario);

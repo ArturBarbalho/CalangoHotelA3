@@ -1,15 +1,30 @@
 //tabelas para criar no banco
 Hospedes = {
-    Nome
-    Email
-    Telefone
-    Quarto
-    DataEntrada
-    DataSaida
-    Valor
-    FormaPagamento
+    Nome: String
+    Email: String
+    Telefone: String
+    Quarto: int
+    DataEntrada: String
+    DataSaida: String
+    Valor: int
+    FormaPagamento: String
 }
 
 Reservas = {
-    
+    Status: String
+    Quarto: int
+    ID_Cliente: int
+    Data_CheckIn: String
+    Data_CheckOut: String
+}
+
+Funcionarios = {
+    usuario: String
+    senha: String
+}
+
+Pagamentos = {
+    valor: int
+    data: int
+    metodo: String
 }
