@@ -7,7 +7,7 @@ const ListaPagamentos = () => {
   useEffect(() => {
     const fetchPagamentos = async () => {
       try {
-        const response = await fetch("/api/pagamentos");
+        const response = await fetch("http://localhost:8081/api/pagamentos");
         if (!response.ok) {
           throw new Error('Erro na requisição');
         }

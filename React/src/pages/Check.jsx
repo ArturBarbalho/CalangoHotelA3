@@ -6,7 +6,7 @@ const CheckComponent = () => {
 
   const carregar = async () => {
     try {
-      const response = await fetch("/api/check/reservas");
+      const response = await fetch("http://localhost:8081/api/check/reservas");
       const data = await response.json();
       setReservas(JSON.parse(data.message));
       alert("✅ Reservas carregadas com sucesso!");
@@ -17,7 +17,7 @@ const CheckComponent = () => {
 
   const fazerCheckIn = async (id) => {
     try {
-      const response = await fetch("/api/check/checkin", {
+      const response = await fetch("http://localhost:8081/api/check/checkin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id })
@@ -36,7 +36,7 @@ const CheckComponent = () => {
 
   const fazerCheckOut = async (id) => {
     try {
-      const response = await fetch("/api/check/checkout", {
+      const response = await fetch("http://localhost:8081/api/check/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id })

@@ -26,7 +26,7 @@ const CadastroCliente = () => {
     };
 
     try {
-      const response = await fetch("/api/cadastro", {
+      const response = await fetch("http://localhost:8081/api/cadastro", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
